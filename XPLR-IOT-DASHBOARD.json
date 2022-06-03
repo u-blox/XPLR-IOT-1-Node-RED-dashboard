@@ -1,0 +1,1448 @@
+[
+    {
+        "id": "6979a4e1.44ba94",
+        "type": "tab",
+        "label": "XPLR-IOT-1 Dashboard",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "888240c7.1631b8",
+        "type": "worldmap-tracks",
+        "z": "6979a4e1.44ba94",
+        "name": "",
+        "depth": "10",
+        "layer": "combined",
+        "x": 710,
+        "y": 154,
+        "wires": [
+            [
+                "eb6d3508.d32ef"
+            ]
+        ]
+    },
+    {
+        "id": "73372c23.a6d984",
+        "type": "ui_button",
+        "z": "6979a4e1.44ba94",
+        "name": "",
+        "group": "3162c7d5.0d79e8",
+        "order": 4,
+        "width": "3",
+        "height": "1",
+        "passthru": false,
+        "label": "Clear Map",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "#ff6e59",
+        "icon": "",
+        "payload": "{\"command\":{\"clear\":\"tracks\"} }",
+        "payloadType": "json",
+        "topic": "",
+        "x": 510,
+        "y": 194,
+        "wires": [
+            [
+                "888240c7.1631b8",
+                "eb6d3508.d32ef"
+            ]
+        ]
+    },
+    {
+        "id": "5be857d6.1affc8",
+        "type": "ui_template",
+        "z": "6979a4e1.44ba94",
+        "group": "3162c7d5.0d79e8",
+        "name": "customise background",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "format": "<style> \n\n#nr-dashboard-toolbar {\n background-color: #ff6e59;\n}\n\n\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "templateScope": "local",
+        "x": 400,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "da969115.68ee48",
+        "type": "ui_chart",
+        "z": "6979a4e1.44ba94",
+        "name": "Pressure",
+        "group": "77d866a.d09ee98",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "label": "Pressure kPa {{msg.topic}}",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "Awaiting sensor publish",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "5",
+        "removeOlderPoints": "20",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#ff9896",
+            "#ff9896",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 880,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4b0c84cc.faa21c",
+        "type": "ui_chart",
+        "z": "6979a4e1.44ba94",
+        "name": "Humidity",
+        "group": "77d866a.d09ee98",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "Humidity % {{msg.topic}}",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "Awaiting sensor publish",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "5",
+        "removeOlderPoints": "20",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#ff9896",
+            "#ff9896",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 880,
+        "y": 596,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fc0437e6.5f688",
+        "type": "ui_chart",
+        "z": "6979a4e1.44ba94",
+        "name": "Temp",
+        "group": "77d866a.d09ee98",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "label": "Temp C {{msg.topic}}",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "Awaiting sensor publish",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "5",
+        "removeOlderPoints": "20",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#ff9896",
+            "#ff9896",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 870,
+        "y": 632,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "29a87be.7fbfd84",
+        "type": "ui_chart",
+        "z": "6979a4e1.44ba94",
+        "name": "Accelerometer",
+        "group": "97ecaee5.ec9ea",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Accelerometer g {{msg.sensor}}",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "Awaiting sensor publish",
+        "dot": false,
+        "ymin": "-10",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#ff6e59",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 900,
+        "y": 774,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1d5153c2.07bf2c",
+        "type": "ui_gauge",
+        "z": "6979a4e1.44ba94",
+        "name": "Battery",
+        "group": "97ecaee5.ec9ea",
+        "order": 5,
+        "width": "6",
+        "height": "4",
+        "gtype": "donut",
+        "title": "Battery {{msg.topic}}",
+        "label": "V",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "12",
+        "colors": [
+            "#f66d59",
+            "#e6983a",
+            "#71b989"
+        ],
+        "seg1": "20",
+        "seg2": "50",
+        "x": 880,
+        "y": 1046,
+        "wires": []
+    },
+    {
+        "id": "fbeafbde.ebf6b8",
+        "type": "json",
+        "z": "6979a4e1.44ba94",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 130,
+        "y": 120,
+        "wires": [
+            [
+                "3b2f7e26.bdfe6a",
+                "3aca0d87.f2ecaa"
+            ]
+        ]
+    },
+    {
+        "id": "516ac5b1.d5e9c4",
+        "type": "switch",
+        "z": "6979a4e1.44ba94",
+        "name": "direct env vals",
+        "property": "mes",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Pr",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Hm",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Tm",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 4,
+        "x": 640,
+        "y": 600,
+        "wires": [
+            [
+                "da969115.68ee48"
+            ],
+            [
+                "4b0c84cc.faa21c"
+            ],
+            [
+                "fc0437e6.5f688"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "2eee7fa4.c77c78",
+        "type": "function",
+        "z": "6979a4e1.44ba94",
+        "name": "Set lon and lat",
+        "func": "// deviceName = msg.payload.deviceName;\n// topic = msg.payload.topic.split('/');\n// node.warn(\"split topic is \" + topic);\n\nvar lon;\nvar lat;\n\nlat = msg.payload.Px;\nlon = msg.payload.Py;\nsource = msg.payload.ID;\n// node.warn(\"lon = \" + lon);\n// node.warn(\"lat = \" + lat);\n\nvar today = new Date();\nvar date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();\nvar time = today.getHours() + \":\" + today.getMinutes() + \":\" + today.getSeconds();\nvar dateTime = date + ' ' + time + ' (UTC)';\n\nmsg.payload = \n{ \n\n    \"name\": source, \n    // \"Source\":source,\n    \"lat\": lat,\n    \"lon\": lon,\n    \"timestamp\": dateTime,\n    \"layer\":\"tracks\",\n    \"color\":\"#000000\",\n    \"icon\":\"fa-car\",\n    \"iconColor\":\"#432F87\"\n}\n\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 520,
+        "y": 254,
+        "wires": [
+            [
+                "888240c7.1631b8",
+                "eb6d3508.d32ef"
+            ]
+        ]
+    },
+    {
+        "id": "ad7c767a.abcd48",
+        "type": "mqtt in",
+        "z": "6979a4e1.44ba94",
+        "name": "XPLR-IOT-1 MQTT In",
+        "topic": "XPLR-IOT-1/dashboard",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "e0aeb1fe.35ade8",
+        "x": 120,
+        "y": 40,
+        "wires": [
+            [
+                "fbeafbde.ebf6b8"
+            ]
+        ]
+    },
+    {
+        "id": "3eeafc62.ea5b7c",
+        "type": "switch",
+        "z": "6979a4e1.44ba94",
+        "name": "Filter by Sensor ID",
+        "property": "payload.ID",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "MAXM10",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "LIS3MDL",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "BME280",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "LIS2DH12",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "LTR303",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "BQ27421",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 7,
+        "x": 130,
+        "y": 500,
+        "wires": [
+            [
+                "9ab65c96.85b2c"
+            ],
+            [
+                "c8bf5a94.9094b8"
+            ],
+            [
+                "d864d947.a44298"
+            ],
+            [
+                "949571ec.817e18"
+            ],
+            [
+                "4e413ba5.fc807c"
+            ],
+            [
+                "59a1d157.1acd48"
+            ],
+            [
+                "27fac5ec.ee9b52"
+            ]
+        ]
+    },
+    {
+        "id": "d864d947.a44298",
+        "type": "function",
+        "z": "6979a4e1.44ba94",
+        "name": "Create msg per env value",
+        "func": "var messages = []; \nvar newMsg = {\"payload\":\"none\"};\n\nif(msg.payload.Tm !== undefined)\n{\n    newMsg = { payload: msg.payload.Tm };\n    newMsg.mes = \"Tm\";\n    newMsg.topic = msg.payload.ID;\n    messages.push(newMsg);\n}\n\nif(msg.payload.Hm !== undefined)\n{\n    newMsg = { payload: msg.payload.Hm };\n    newMsg.mes = \"Hm\";\n    newMsg.topic = msg.payload.ID;\n    messages.push(newMsg);\n}\nif(msg.payload.Pr !== undefined)\n{\n    newMsg = { payload: msg.payload.Pr };\n    newMsg.mes = \"Pr\";\n    newMsg.topic = msg.payload.ID;\n    messages.push(newMsg);\n}\n\nif (msg.payload.err !== undefined)\n{\n    msg.topic = msg.payload.ID;\n    return [messages, msg];\n}\nelse\n{\n    return [messages];\n}\n    ",
+        "outputs": 2,
+        "noerr": 0,
+        "x": 410,
+        "y": 640,
+        "wires": [
+            [
+                "516ac5b1.d5e9c4",
+                "6ad245b7.1d991c"
+            ],
+            [
+                "64af8afa.4f580c"
+            ]
+        ]
+    },
+    {
+        "id": "6852e7c9.1fa73",
+        "type": "function",
+        "z": "6979a4e1.44ba94",
+        "name": "Set light val",
+        "func": "var val = msg.payload.Lt;\nmsg.topic = msg.payload.ID;\nmsg.payload = val;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 510,
+        "y": 909,
+        "wires": [
+            [
+                "8a790ecc.df74f"
+            ]
+        ]
+    },
+    {
+        "id": "ba9abf8a.84eef",
+        "type": "function",
+        "z": "6979a4e1.44ba94",
+        "name": "Set battery val",
+        "func": "var val = msg.payload.Volt;\nmsg.topic = msg.payload.ID;\nmsg.payload = val;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 518,
+        "y": 1046,
+        "wires": [
+            [
+                "1d5153c2.07bf2c"
+            ]
+        ]
+    },
+    {
+        "id": "58b2b3db.ba903c",
+        "type": "function",
+        "z": "6979a4e1.44ba94",
+        "name": "Set accelerometer vals",
+        "func": "var msgX, msgY, msgZ;\n\nvar xVal,yVal,zVal;\nvar xTopic, yTopic, zTopic;\n\nxVal = msg.payload.Ax;\nxTopic = \"x\";\n\nyVal = msg.payload.Ay;\nyTopic = \"y\";\n\nzVal = msg.payload.Az;\nzTopic = \"z\";\n\nif (xVal > 0) {\n    msgX = {\n        payload : xVal,\n        sensor : msg.payload.ID,\n        topic : xTopic\n    } \n} else {\n    msgX = {\n        payload : 0,\n        sensor : msg.payload.ID,\n        topic : xTopic\n    } \n}\n\nif (yVal > 0) {\n    msgY = {\n        payload : yVal,\n        sensor : msg.payload.ID,\n        topic : yTopic\n    }\n} else {\n    msgY = {\n        payload : 0,\n        sensor : msg.payload.ID,\n        topic : yTopic\n    }\n}\n\nif (zVal !== 0) {\n    msgZ = {\n        payload : zVal,\n        sensor : msg.payload.ID,\n        topic : zTopic\n    }\n} else {\n    msgZ = {\n        payload : 0,\n        sensor : msg.payload.ID,\n        topic : zTopic\n    }\n}\nmsgX.sensor = msg.payload.ID;\nreturn [[ msgX, msgY, msgZ ]];\n\n",
+        "outputs": 3,
+        "noerr": 0,
+        "x": 540,
+        "y": 767,
+        "wires": [
+            [
+                "29a87be.7fbfd84"
+            ],
+            [
+                "29a87be.7fbfd84"
+            ],
+            [
+                "29a87be.7fbfd84"
+            ]
+        ]
+    },
+    {
+        "id": "8a790ecc.df74f",
+        "type": "ui_chart",
+        "z": "6979a4e1.44ba94",
+        "name": "Light",
+        "group": "97ecaee5.ec9ea",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "Light lux {{msg.topic}}",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "Awaiting sensor publish",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#f79796",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 871,
+        "y": 909,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ef1ab022.75bbb",
+        "type": "function",
+        "z": "6979a4e1.44ba94",
+        "name": "set mag val",
+        "func": "var val = msg.payload.heading;\nmsg.sensor=msg.payload.ID;\nmsg.payload = val;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 510,
+        "y": 424,
+        "wires": [
+            [
+                "b4b46cf9.91259"
+            ]
+        ]
+    },
+    {
+        "id": "14180ed9.6908d1",
+        "type": "ui_gauge",
+        "z": "6979a4e1.44ba94",
+        "name": "",
+        "group": "3162c7d5.0d79e8",
+        "order": 6,
+        "width": "8",
+        "height": "7",
+        "gtype": "compass",
+        "title": "{{msg.topic}} {{msg.sensor}}",
+        "label": "degrees",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "359",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1040,
+        "y": 425,
+        "wires": []
+    },
+    {
+        "id": "b4b46cf9.91259",
+        "type": "change",
+        "z": "6979a4e1.44ba94",
+        "name": "Convert degrees to heading",
+        "rules": [
+            {
+                "t": "set",
+                "p": "directions",
+                "pt": "flow",
+                "to": "$exists($flowContext(\"directions\")) ?  $flowContext(\"directions\") : [\"N\", \"NNE\", \"NE\", \"ENE\", \"E\", \"ESE\", \"SE\", \"SSE\", \"S\", \"SSW\", \"SW\", \"WSW\", \"W\", \"WNW\", \"NW\", \"NNW\"] ",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "index",
+                "pt": "msg",
+                "to": "$string($floor((payload / 22.5) + 0.5) % 16)",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "$flowContext(\"directions[\"&index&\"]\")",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 759,
+        "y": 425,
+        "wires": [
+            [
+                "14180ed9.6908d1"
+            ]
+        ]
+    },
+    {
+        "id": "3aca0d87.f2ecaa",
+        "type": "debug",
+        "z": "6979a4e1.44ba94",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 370,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "27fac5ec.ee9b52",
+        "type": "debug",
+        "z": "6979a4e1.44ba94",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 110,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "3b2f7e26.bdfe6a",
+        "type": "function",
+        "z": "6979a4e1.44ba94",
+        "name": "Create Msg per Sensor",
+        "func": "var messages = []; \nvar newMsg;\n\nif (msg.payload.Sensors !== undefined)\n{\n    for (let sensor of msg.payload.Sensors)\n    {\n        newMsg = { payload: sensor };\n        messages.push(newMsg);\n    }\n} \nelse \n{\n    messages.push(msg);\n}\n\n\nreturn [messages];",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 150,
+        "y": 200,
+        "wires": [
+            [
+                "da904835.aeb48"
+            ]
+        ]
+    },
+    {
+        "id": "da904835.aeb48",
+        "type": "delay",
+        "z": "6979a4e1.44ba94",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "50",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 110,
+        "y": 280,
+        "wires": [
+            [
+                "3eeafc62.ea5b7c"
+            ]
+        ]
+    },
+    {
+        "id": "a7e6330e.e29f88",
+        "type": "function",
+        "z": "6979a4e1.44ba94",
+        "name": "Display Location Err",
+        "func": "var err = msg.payload.err;\n\nif (err) {\n    msg.payload = msg.payload.descriptor+\" \"+msg.payload[\"err\"] + \" Error\";\n    msg.colour = \"#ff6e59\";\n} else {\n    msg.payload = \"\"\n    msg.colour = \"white\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 540,
+        "y": 354,
+        "wires": [
+            [
+                "fd87ebb9.8d35c"
+            ]
+        ]
+    },
+    {
+        "id": "fd87ebb9.8d35c",
+        "type": "ui_button",
+        "z": "6979a4e1.44ba94",
+        "name": "LocationErr",
+        "group": "3162c7d5.0d79e8",
+        "order": 5,
+        "width": "4",
+        "height": "1",
+        "passthru": false,
+        "label": "{{msg.payload}}",
+        "tooltip": "",
+        "color": "white",
+        "bgcolor": "{{msg.colour}}",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 890,
+        "y": 307,
+        "wires": [
+            [
+                "ba7cb0ff.a3a7e8"
+            ]
+        ]
+    },
+    {
+        "id": "ba7cb0ff.a3a7e8",
+        "type": "function",
+        "z": "6979a4e1.44ba94",
+        "name": "ResetErr",
+        "func": "//The User has pressed the button acknowledging\n//the sensor error\nmsg.payload = \"\";\nmsg.colour = \"white\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1041,
+        "y": 307,
+        "wires": [
+            [
+                "fd87ebb9.8d35c"
+            ]
+        ]
+    },
+    {
+        "id": "9ab65c96.85b2c",
+        "type": "switch",
+        "z": "6979a4e1.44ba94",
+        "name": "",
+        "property": "payload.Px",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nnull"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 350,
+        "y": 314,
+        "wires": [
+            [
+                "2eee7fa4.c77c78",
+                "b2ce7cd0.effb4"
+            ],
+            [
+                "a7e6330e.e29f88"
+            ]
+        ]
+    },
+    {
+        "id": "614ea401.a459d4",
+        "type": "ui_button",
+        "z": "6979a4e1.44ba94",
+        "name": "EnvironErr",
+        "group": "77d866a.d09ee98",
+        "order": 6,
+        "width": "0",
+        "height": "0",
+        "passthru": false,
+        "label": "{{msg.payload}}",
+        "tooltip": "",
+        "color": "white",
+        "bgcolor": "{{msg.colour}}",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 890,
+        "y": 678,
+        "wires": [
+            [
+                "5d454a95.f24eec"
+            ]
+        ]
+    },
+    {
+        "id": "5d454a95.f24eec",
+        "type": "function",
+        "z": "6979a4e1.44ba94",
+        "name": "ResetErr",
+        "func": "//The User has pressed the button acknowledging\n//the sensor error\nmsg.payload = \"\";\nmsg.colour = \"white\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1040,
+        "y": 678,
+        "wires": [
+            [
+                "614ea401.a459d4"
+            ]
+        ]
+    },
+    {
+        "id": "64af8afa.4f580c",
+        "type": "function",
+        "z": "6979a4e1.44ba94",
+        "name": "Display Location Err",
+        "func": "var err = msg.payload.err;\n\nif (err) {\n    msg.payload = msg.payload.descriptor + \" \" + msg.payload[\"err\"] + \" Error\";\n    msg.colour = \"#ff6e59\";\n} else {\n    msg.payload = \"\"\n    msg.colour = \"white\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 660,
+        "y": 694,
+        "wires": [
+            [
+                "614ea401.a459d4"
+            ]
+        ]
+    },
+    {
+        "id": "b2ce7cd0.effb4",
+        "type": "function",
+        "z": "6979a4e1.44ba94",
+        "name": "ResetErr",
+        "func": "//On receipt of a valid Sensor measure,\n//Clear the error \nmsg.payload = \"\";\nmsg.colour = \"white\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 500,
+        "y": 307,
+        "wires": [
+            [
+                "fd87ebb9.8d35c"
+            ]
+        ]
+    },
+    {
+        "id": "6ad245b7.1d991c",
+        "type": "function",
+        "z": "6979a4e1.44ba94",
+        "name": "ResetErr",
+        "func": "//On receipt of a valid Sensor measure,\n//Clear the error \nmsg.payload = \"\";\nmsg.colour = \"white\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 621,
+        "y": 652,
+        "wires": [
+            [
+                "614ea401.a459d4"
+            ]
+        ]
+    },
+    {
+        "id": "295fada4.a29692",
+        "type": "ui_button",
+        "z": "6979a4e1.44ba94",
+        "name": "AccelErr",
+        "group": "97ecaee5.ec9ea",
+        "order": 2,
+        "width": "0",
+        "height": "0",
+        "passthru": false,
+        "label": "{{msg.payload}}",
+        "tooltip": "",
+        "color": "white",
+        "bgcolor": "{{msg.colour}}",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 882,
+        "y": 834,
+        "wires": [
+            [
+                "aebca5a5.509e58"
+            ]
+        ]
+    },
+    {
+        "id": "aebca5a5.509e58",
+        "type": "function",
+        "z": "6979a4e1.44ba94",
+        "name": "ResetErr",
+        "func": "//The User has pressed the button acknowledging\n//the sensor error\nmsg.payload = \"\";\nmsg.colour = \"white\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1041,
+        "y": 834,
+        "wires": [
+            [
+                "295fada4.a29692"
+            ]
+        ]
+    },
+    {
+        "id": "b4390010.0573a",
+        "type": "function",
+        "z": "6979a4e1.44ba94",
+        "name": "Display Location Err",
+        "func": "var err = msg.payload.err;\n\nif (err) {\n    msg.payload = msg.payload.descriptor + \" \" + msg.payload[\"err\"] + \" Error\";\n    msg.colour = \"#ff6e59\";\n} else {\n    msg.payload = \"\"\n    msg.colour = \"white\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 540,
+        "y": 854,
+        "wires": [
+            [
+                "295fada4.a29692"
+            ]
+        ]
+    },
+    {
+        "id": "d8be0fd7.af624",
+        "type": "function",
+        "z": "6979a4e1.44ba94",
+        "name": "ResetErr",
+        "func": "//On receipt of a valid Sensor measure,\n//Clear the error \nmsg.payload = \"\";\nmsg.colour = \"white\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 500,
+        "y": 814,
+        "wires": [
+            [
+                "295fada4.a29692"
+            ]
+        ]
+    },
+    {
+        "id": "949571ec.817e18",
+        "type": "switch",
+        "z": "6979a4e1.44ba94",
+        "name": "",
+        "property": "payload.Ax",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nnull"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 350,
+        "y": 814,
+        "wires": [
+            [
+                "58b2b3db.ba903c",
+                "d8be0fd7.af624"
+            ],
+            [
+                "b4390010.0573a"
+            ]
+        ]
+    },
+    {
+        "id": "7982cfa7.a617f",
+        "type": "ui_button",
+        "z": "6979a4e1.44ba94",
+        "name": "BattErr",
+        "group": "97ecaee5.ec9ea",
+        "order": 6,
+        "width": "0",
+        "height": "0",
+        "passthru": false,
+        "label": "{{msg.payload}}",
+        "tooltip": "",
+        "color": "white",
+        "bgcolor": "{{msg.colour}}",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 879,
+        "y": 1106,
+        "wires": [
+            [
+                "865b1d16.a0fb58"
+            ]
+        ]
+    },
+    {
+        "id": "865b1d16.a0fb58",
+        "type": "function",
+        "z": "6979a4e1.44ba94",
+        "name": "ResetErr",
+        "func": "//The User has pressed the button acknowledging\n//the sensor error\nmsg.payload = \"\";\nmsg.colour = \"white\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1039,
+        "y": 1106,
+        "wires": [
+            [
+                "7982cfa7.a617f"
+            ]
+        ]
+    },
+    {
+        "id": "61a84efe.a0f698",
+        "type": "function",
+        "z": "6979a4e1.44ba94",
+        "name": "Display Location Err",
+        "func": "var err = msg.payload.err;\n\nif (err) {\n    msg.payload = msg.payload.descriptor + \" \" + msg.payload[\"err\"] + \" Error\";\n    msg.colour = \"#ff6e59\";\n} else {\n    msg.payload = \"\"\n    msg.colour = \"white\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 538,
+        "y": 1126,
+        "wires": [
+            [
+                "7982cfa7.a617f"
+            ]
+        ]
+    },
+    {
+        "id": "4fccdc4c.77a544",
+        "type": "function",
+        "z": "6979a4e1.44ba94",
+        "name": "ResetErr",
+        "func": "//On receipt of a valid Sensor measure,\n//Clear the error \nmsg.payload = \"\";\nmsg.colour = \"white\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 498,
+        "y": 1086,
+        "wires": [
+            [
+                "7982cfa7.a617f"
+            ]
+        ]
+    },
+    {
+        "id": "59a1d157.1acd48",
+        "type": "switch",
+        "z": "6979a4e1.44ba94",
+        "name": "",
+        "property": "payload.Volt",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nnull"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 348,
+        "y": 1086,
+        "wires": [
+            [
+                "ba9abf8a.84eef",
+                "4fccdc4c.77a544"
+            ],
+            [
+                "61a84efe.a0f698"
+            ]
+        ]
+    },
+    {
+        "id": "ffec38a1.15921",
+        "type": "ui_button",
+        "z": "6979a4e1.44ba94",
+        "name": "LightErr",
+        "group": "97ecaee5.ec9ea",
+        "order": 4,
+        "width": "0",
+        "height": "0",
+        "passthru": false,
+        "label": "{{msg.payload}}",
+        "tooltip": "",
+        "color": "white",
+        "bgcolor": "{{msg.colour}}",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 882,
+        "y": 967,
+        "wires": [
+            [
+                "b57cf89b.e35e18"
+            ]
+        ]
+    },
+    {
+        "id": "b57cf89b.e35e18",
+        "type": "function",
+        "z": "6979a4e1.44ba94",
+        "name": "ResetErr",
+        "func": "//The User has pressed the button acknowledging\n//the sensor error\nmsg.payload = \"\";\nmsg.colour = \"white\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1040,
+        "y": 967,
+        "wires": [
+            [
+                "ffec38a1.15921"
+            ]
+        ]
+    },
+    {
+        "id": "7e8dc51.e6ee0bc",
+        "type": "function",
+        "z": "6979a4e1.44ba94",
+        "name": "Display Location Err",
+        "func": "var err = msg.payload.err;\n\nif (err) {\n    msg.payload = msg.payload.descriptor + \" \" + msg.payload[\"err\"] + \" Error\";\n    msg.colour = \"#ff6e59\";\n} else {\n    msg.payload = \"\"\n    msg.colour = \"white\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 540,
+        "y": 985,
+        "wires": [
+            [
+                "ffec38a1.15921"
+            ]
+        ]
+    },
+    {
+        "id": "54149db.c49aee4",
+        "type": "function",
+        "z": "6979a4e1.44ba94",
+        "name": "ResetErr",
+        "func": "//On receipt of a valid Sensor measure,\n//Clear the error \nmsg.payload = \"\";\nmsg.colour = \"white\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 500,
+        "y": 947,
+        "wires": [
+            [
+                "ffec38a1.15921"
+            ]
+        ]
+    },
+    {
+        "id": "4e413ba5.fc807c",
+        "type": "switch",
+        "z": "6979a4e1.44ba94",
+        "name": "",
+        "property": "payload.Lt",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nnull"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 350,
+        "y": 933,
+        "wires": [
+            [
+                "6852e7c9.1fa73",
+                "54149db.c49aee4"
+            ],
+            [
+                "7e8dc51.e6ee0bc"
+            ]
+        ]
+    },
+    {
+        "id": "c8bf5a94.9094b8",
+        "type": "switch",
+        "z": "6979a4e1.44ba94",
+        "name": "",
+        "property": "payload.heading",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nnull"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 349,
+        "y": 445,
+        "wires": [
+            [
+                "ef1ab022.75bbb",
+                "6d3d504f.f91e2"
+            ],
+            [
+                "772350b0.13c08"
+            ]
+        ]
+    },
+    {
+        "id": "b95f1bab.9f4498",
+        "type": "ui_button",
+        "z": "6979a4e1.44ba94",
+        "name": "MagErr",
+        "group": "3162c7d5.0d79e8",
+        "order": 7,
+        "width": "0",
+        "height": "0",
+        "passthru": false,
+        "label": "{{msg.payload}}",
+        "tooltip": "",
+        "color": "white",
+        "bgcolor": "{{msg.colour}}",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 880,
+        "y": 485,
+        "wires": [
+            [
+                "57d569a0.8a5318"
+            ]
+        ]
+    },
+    {
+        "id": "57d569a0.8a5318",
+        "type": "function",
+        "z": "6979a4e1.44ba94",
+        "name": "ResetErr",
+        "func": "//The User has pressed the button acknowledging\n//the sensor error\nmsg.payload = \"\";\nmsg.colour = \"white\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1041,
+        "y": 485,
+        "wires": [
+            [
+                "b95f1bab.9f4498"
+            ]
+        ]
+    },
+    {
+        "id": "772350b0.13c08",
+        "type": "function",
+        "z": "6979a4e1.44ba94",
+        "name": "Display Location Err",
+        "func": "var err = msg.payload.err;\n\nif (err) {\n    msg.payload = msg.payload.descriptor + \" \" + msg.payload[\"err\"] + \" Error\";\n    msg.colour = \"#ff6e59\";\n} else {\n    msg.payload = \"\"\n    msg.colour = \"white\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 543,
+        "y": 505,
+        "wires": [
+            [
+                "b95f1bab.9f4498"
+            ]
+        ]
+    },
+    {
+        "id": "6d3d504f.f91e2",
+        "type": "function",
+        "z": "6979a4e1.44ba94",
+        "name": "ResetErr",
+        "func": "//On receipt of a valid Sensor measure,\n//Clear the error \nmsg.payload = \"\";\nmsg.colour = \"white\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 504,
+        "y": 465,
+        "wires": [
+            [
+                "b95f1bab.9f4498"
+            ]
+        ]
+    },
+    {
+        "id": "e1d966d2.02f22",
+        "type": "ui_button",
+        "z": "6979a4e1.44ba94",
+        "name": "PressSpace",
+        "group": "77d866a.d09ee98",
+        "order": 2,
+        "width": "0",
+        "height": "0",
+        "passthru": false,
+        "label": "",
+        "tooltip": "",
+        "color": "white",
+        "bgcolor": "white",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 1050,
+        "y": 577,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "36d8a101.1be03e",
+        "type": "ui_button",
+        "z": "6979a4e1.44ba94",
+        "name": "HumidSpace",
+        "group": "77d866a.d09ee98",
+        "order": 4,
+        "width": "0",
+        "height": "0",
+        "passthru": false,
+        "label": "",
+        "tooltip": "",
+        "color": "white",
+        "bgcolor": "white",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 1050,
+        "y": 617,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "eb6d3508.d32ef",
+        "type": "worldmap",
+        "z": "6979a4e1.44ba94",
+        "name": "Location",
+        "lat": "",
+        "lon": "",
+        "zoom": "",
+        "layer": "OSM",
+        "cluster": "",
+        "maxage": "",
+        "usermenu": "show",
+        "layers": "show",
+        "panit": "true",
+        "panlock": "false",
+        "zoomlock": "false",
+        "hiderightclick": "false",
+        "coords": "none",
+        "showgrid": "false",
+        "path": "/XPLR-IOT-1",
+        "x": 860,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "2fc443cb.df29fc",
+        "type": "ui_template",
+        "z": "6979a4e1.44ba94",
+        "group": "3162c7d5.0d79e8",
+        "name": "",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "format": " <iframe src=\"/XPLR-IOT-1\" height=350 width=400></iframe>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "templateScope": "local",
+        "x": 680,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3162c7d5.0d79e8",
+        "type": "ui_group",
+        "z": "6979a4e1.44ba94",
+        "name": "Location",
+        "tab": "e59ef6da.e13e8",
+        "disp": false,
+        "width": "8",
+        "collapse": false
+    },
+    {
+        "id": "77d866a.d09ee98",
+        "type": "ui_group",
+        "z": "6979a4e1.44ba94",
+        "name": "Environment",
+        "tab": "e59ef6da.e13e8",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": true
+    },
+    {
+        "id": "97ecaee5.ec9ea",
+        "type": "ui_group",
+        "z": "",
+        "name": "Device",
+        "tab": "e59ef6da.e13e8",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": true
+    },
+    {
+        "id": "e0aeb1fe.35ade8",
+        "type": "mqtt-broker",
+        "z": "6979a4e1.44ba94",
+        "name": "XPLR-IOT",
+        "broker": "",
+        "port": "",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "43200",
+        "cleansession": false,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "e59ef6da.e13e8",
+        "type": "ui_tab",
+        "z": "6979a4e1.44ba94",
+        "name": "XPLR-IOT-1 Dashboard",
+        "icon": "fa-microchip",
+        "order": 7,
+        "disabled": false,
+        "hidden": false
+    }
+]

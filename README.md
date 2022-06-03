@@ -1,8 +1,19 @@
 # XPLR-IOT-1-Node-RED-dashboard
-Comming soon...
+This repository contains the Node-RED JSON source file which contains the
+XPLR-IOT-1 demonstration dashboard. 
+
+1. Open the JSON file in a text editor
+2. Select all (<Ctrl>+A)
+3. Copy the content to the clipboard
+4. From within the Node-RED graphical editor, click on the triple-bar menu icon
+at the upper right
+5. Click the "Import" menu item
+6. Paste (<Ctrl>+V) the clipboard contents into the text box and click the
+"Import" button
+7. Deploy the dashboard flow
 
 ## Disclaimer
-Copyright (C) u-blox 
+Copyright &copy; u-blox 
 
 u-blox reserves all rights in this deliverable (documentation, software, etc.,
 hereafter “Deliverable”). 
